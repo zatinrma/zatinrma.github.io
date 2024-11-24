@@ -1,0 +1,120 @@
+/* General resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+}
+
+/* Game container for all the elements */
+.game-container {
+    text-align: center;
+}
+
+/* Game info section (Score and Title) */
+.game-info {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+#scoreDisplay {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #fff;
+}
+
+/* Game canvas styling */
+canvas {
+    border-radius: 10px;
+    background: #111;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+/* Direction control buttons */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.controls div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameOverScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#restartButton {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    canvas {
+        width: 100%;
+        max-width: 90vw;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #scoreDisplay {
+        font-size: 1rem;
+    }
+
+    /* Reduce button size for smaller screens */
+    button {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+}

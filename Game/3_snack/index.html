@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Game Info Section (Score and Title) -->
+        <div class="game-info">
+            <h1>Snake Game</h1>
+            <p id="scoreDisplay">Score: 0</p>
+        </div>
+        
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Direction Buttons -->
+        <div class="controls">
+            <button id="upButton"><i class="fas fa-arrow-up"></i></button>
+            <div class="horizontal-buttons">
+                <button id="leftButton"><i class="fas fa-arrow-left"></i></button>
+                <button id="rightButton"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            <button id="downButton"><i class="fas fa-arrow-down"></i></button>
+        </div>
+
+        <!-- Game Over Screen (when the game ends) -->
+        <div id="gameOverScreen" class="hidden">
+            <p id="finalScore"></p>
+            <button id="restartButton">Restart</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

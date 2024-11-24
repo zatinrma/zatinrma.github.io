@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgrey;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: #4CAF50;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.header img {
+    width: 60px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    text-transform: uppercase;
+    border: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buttons button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+.pong-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px; /* to avoid overlapping with header */
+}
+
+#ping-pong {
+    width: 80%;
+    max-width: 800px;
+    background-color: #2f2f2f;
+    border: 12px solid white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.control-buttons button {
+    font-size: 2em;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 50px;
+    height: 50px;
+}
+
+.control-buttons button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
