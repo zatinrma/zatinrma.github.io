@@ -195,6 +195,7 @@ function update() {
 
     if (collision(ball, player)) {
         // PLAY SOUND WHEN THE BALL HITS THE PADDLE
+        
         hitSound.play();
 
         let collidePoint = ball.y - (player.y + player.height / 2);
