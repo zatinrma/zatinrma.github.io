@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+
+</head>
+<body>
+    <h2>Calculator</h2>
+    <label for="quantity">Calculator between 2 numbers</label>
+    <input type="number" id="ip1" name="ip1">
+    <select name="operator_cal" id="operator_cal">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="x">X</option>
+        <option value="/">/</option>
+      </select>
+    <input type="number" id="ip2" name="ip2">
+    <input type="submit">
+    <h3 id="result_0"></h3>
+    <hr>
+    <h2>Sequential Sum Calculator</h2>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="Enter a number" min="1">
+    <hr>
+    <h1>HW-1</h1>
+    <h2>Sum of Even Number Calculator</h2>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="Enter a number" min="1">
+    <button onclick="calculateSum()">Result</button>
+    <p>The Result of Sum Even Number from [1-5] is <strong>6</strong> (2 + 4)</p>
+    <h2>Sum Odd Number Calculator </h2>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput" placeholder="Enter a number" min="1">
+    <button onclick="calculateSum()">Result</button>
+    <p>The Result of Sum Even Number from [1-5] is <strong>9</strong> (1 + 3 + 5)</p>
+    <hr>
+    <h1>HW-2</h1>
+    <h2>Concatenation Between 2 String </h2>
+    <label for="numberInput">Enter String 1:</label>
+    <input type="text" id="numberInput" placeholder="Enter String 1">
+    <label for="numberInput">Enter String 2:</label>
+    <input type="text" id="numberInput" placeholder="Enter String 2">
+    <button onclick="calculateSum()">Result</button>
+    <p>The Result of Concatenation between 2 strings is <strong>HelloWorld</strong></p>
+    <hr>
+    <h1>HW-3</h1>
+    <h2>Program To Extract The Last Letter </h2>
+    <label for="numberInput">Enter String :</label>
+    <input type="text" id="numberInput" placeholder="Enter String 1">
+    <button onclick="calculateSum()">Result</button>
+    <p>The Result of Extraction The Last Letter is <strong>u</strong></p>
+    <hr>
+    
+
+    <div id="result"></div>
+        <script>
+        function calculateSum() {
+            // Get the number entered by the user
+            let num = parseInt(document.getElementById("numberInput").value);
+    
+            // Validate input
+            if (isNaN(num) || num <= 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
+    
+            // Calculate the sum of numbers from 1 to num
+            let sum = (num * (num + 1)) / 2;
+    
+            // Display the result
+            document.getElementById("result").textContent = `Sum of numbers from 1 to ${num} is: ${sum}`;
+        }
+    </script>
+    
+
+
+</body>
+</html>
