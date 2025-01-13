@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+body {
+  background-color:  #000001;
+  color: #4ddb19;
+  font-family: Khmer OS Freehand !important;
+}
+
+footer {
+  margin: 1rem;
+}
+
+.box-shadow-full {
+  padding: 1px 1px;
+  position: relative;
+  background-color: #19410b;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  z-index: 2;
+  box-shadow: 0px 0px 6px 1px #fff;
+}
+
+.project-button {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 0rem;
+  border: 1px #172B10 solid;
+  transition: all 500ms ease;
+  cursor: pointer;
+  background-color: transparent;
+  color: #172B10;
+  text-shadow: 0.8px 0.8px 3px #172B10;
+  -webkit-text-stroke: 0.1px #172B10;
+  padding: 0.1rem 5.3rem;
+  font-size: 1.0rem;
+}
+
+.project-button:hover {
+  background: transparent;
+  border: solid 1px #172B10;
+  box-shadow: 0px 0px 10px 3px #172B10;
+  color: #172B10;
+  text-shadow: 1px 2px 10px #172B10;
+  -webkit-text-stroke: 0.1px #172B10;
+}
+
+#exampleModalLabel{
+  color: #172B10;
+  text-shadow: 1px 1px 1px #172B10;
+  -webkit-text-stroke: 0.01px #172B10; 
+}
+
+/* 3# DYNAMIC WITH FADE EFFECT */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  background-color: #fff;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade_customize {
+  animation-name: fade;
+  animation-duration: 2.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .1
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {
+    font-size: 12px
+  }
+}
+/* 3# DYNAMIC WITH FADE EFFECT */
+.modal_customize {
+  background-color: #ffffff;
+}
+
+.product-card {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: small;
+  margin-top: auto !important;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+}
+
+.product-name {
+  font-size: 1rem;
+  margin-top: 3px;
+}
+
+.product-price {
+  font-size: medium;
+  color: #fff;
+}
+
+.line {
+  flex-grow: 1; /* Makes the line fill the available space */
+  height: 1px; /* Sets the thickness of the line */
+  background-color: #fff; /* Adjust color as needed */
+}
+@media (max-width: 576px) {
+  .product-card {
+    text-align: center;
+    margin-bottom: 0px;
+    color: #fff;
+    margin-top: auto !important;
+  }  
+  .product-name {
+    font-size: x-small;
+    margin-top: 3px;
+  }
+  .col-4{
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .box-shadow-full{
+    box-shadow : 0px 0px 3px 1px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .product-card {
+    font-size: small;
+    margin-top: auto !important;
+  }
+}
+/* ############## Nav Bar ##############  */
+.header {
+  position: sticky;
+  top: 0;
+  background: #000001;
+  color: #00ff00;
+  z-index: 399;
+  height: 70px; /* Reduced height */
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap; /* Force items to stay in one row */
+  padding: 0 10px;
+  margin-bottom: 0.3rem;
+  box-shadow: 0 3px 5px rgba(0, 255, 0, 0.5), 0 0 15px rgba(0, 255, 0, 0.75);
+}
+#food_group_id {
+  margin-top: 1rem !important;
+}
+
+.header img {
+  height: 60px; /* Reduced image height */
+  margin-right: 10px;
+}
+
+.header h6 {
+  font-size: 18px;
+  margin-right: 21px;
+  text-shadow: 0 0 1px currentColor, 0 0 1.5px currentColor, 0 0 4px currentColor;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px; /* Smaller font size */
+  transition: 0.5s;
+  letter-spacing: 1.1px;
+  white-space: nowrap;
+}
+
+a:hover {
+  color: #daeed9;
+  text-shadow: 0 0 1.5px #00ff00, 0 0 3px #00ff00, 0 0 8px #00ff00;
+}
+/* Responsive Styles */
+@media (max-width: 431px) {
+  .header {
+    height: 50px; /* Adjust height for mobile */
+    padding: 0 5px;
+  }
+
+  a {
+    font-size: 8.8px; /* Smaller font size for mobile */
+    padding: 2px;
+    margin: 0 3px;
+  }
+
+  .header img {
+    height: 35px; /* Adjust logo size for mobile */
+  }
+
+  .header h6 {
+    font-size: 8px; /* Adjust text size for mobile */
+    text-shadow: 0 0 1px currentColor, 0 0 1.5px currentColor, 0 0 4px currentColor;
+  }
+}
+/* Responsive Styles */
+@media (min-width: 431px){
+  .header {
+    height: 60px; /* Adjust height for mobile */
+    padding: 0 5px;
+  }
+
+  a {
+    font-size: 14px; /* Smaller font size for mobile */
+    padding: 5px;
+    margin: 0 5px;
+    letter-spacing: 0.45px;
+  }
+
+  .header img {
+    height: 45px; /* Adjust logo size for mobile */
+  }
+
+  .header h6 {
+    font-size: 21px; /* Adjust text size for mobile */
+    text-shadow: 0 0 1px currentColor, 0 0 1.5px currentColor, 0 0 4px currentColor;
+  }
+}
