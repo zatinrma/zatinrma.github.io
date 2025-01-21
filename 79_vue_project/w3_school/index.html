@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My first Vue page</title>
+    <style>
+        #app {
+            display: inline-block;
+            padding: 10px;
+            font-size: x-large;
+            background-color: lightgreen;
+            width: 100%;
+            height: 100%;
+        }
+
+        .pinkBG {
+            background-color: lightpink;
+        }
+
+        .redBG {
+            background-color: red;
+        }
+
+        .blueBG {
+            background-color: blue;
+        }
+
+        img {
+            width: 10%;
+            height: 10%;
+            margin: 10px;
+        }
+
+        #v-for-img-class {
+            border: solid black 1px;
+            width: 80%;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        figure {
+            width: 80px;
+            padding: 10px;
+            margin: 10px;
+            background-color: lightskyblue;
+            border-radius: 5px;
+        }
+
+        figure>img {
+            width: auto;
+            height: auto;
+        }
+
+        figcaption {
+            text-align: center;
+        }
+
+        #lightDiv {
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+
+        #lightDiv>img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        #lightDiv>div {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background-color: yellow;
+        }
+
+        #app_mouse_move {
+            border: dashed black 1px;
+            width: 350px;
+            padding: 0 20px;
+        }
+
+        #app_mouse_move>div {
+            width: 200px;
+            height: 80px;
+        }
+
+        #app_mouse_move span {
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #app_show_food_img {
+            border: dashed black 1px;
+            width: 220px;
+            padding: 20px;
+        }
+
+        #app_show_food_img>img {
+            float: right;
+            width: 55%;
+        }
+
+        li:hover {
+            cursor: pointer;
+            background-color: rgb(224, 224, 224);
+        }
+
+        #app_show_food_img>ol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #app_show_food_img li {
+            padding-left: 6px;
+            border-radius: 5px;
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- #################### Exercise 1-->
+        <h1>Vue Example</h1>
+        <p>The message is taken from 'data' inside the Vue instance by writing {{ message }} inside the div with
+            id="app".
+        </p>
+        <h3>Exercise 1</h3>
+        <p>Display Text</p>
+        {{ message }}
+        <hr>
+        <!-- #################### Exercise 2-->
+        <h3>Exercise 2</h3>
+        <p>vue if-else</p>
+        <div class="row">
+            <h4> {{'Random number : ' + likes }}</h4>
+            <p v-if="likes == 0" style="background-color: green;">
+                DRAW (0)
+            </p>
+            <p v-else-if="likes <= 49" style="background-color: blue;">
+                SMALL (1-49)
+            </p>
+            <p v-else style="background-color: red;">
+                BIG (50-99)
+            </p>
+        </div>
+        <button v-on:click="Random_Num()">
+            RANDOM
+        </button>
+        <hr>
+        <!-- #################### Exercise 3-->
+        <h3>Exercise 3</h3>
+        <p>vue onClick</p>
+        <p>This is number {{num}}</p>
+        <button v-on:click="Increase_Num()">
+            + Increase
+        </button>
+        <button v-on:click="num--">
+            - Decrease
+        </button>
+        <hr>
+        <!-- #################### Exercise 4-->
+        <h1>'v-bind' Example</h1>
+        <p>The browser finds the class name inside the Vue instance.</p>
+        <p>Everything inside the div emelent with id="app" can use data from the Vue instance.</p>
+        <div v-bind:class="vueClass">This element is bound to the "pinkBG" class.</div>
+        <button style="background-color: pink;" v-on:click="Set_Pink_BG()">
+            PINK
+        </button>
+        <button style="background-color: red;" v-on:click="Set_Red_BG()">
+            RED
+        </button>
+        <button style="background-color: blue;" v-on:click="Set_Blue_BG()">
+            BLUE
+        </button>
+        <h1>'v-bind' Image Source Example</h1>
+        <p>The browser finds the 'src' attribute value from the Vue instance with the use of 'v-bind'.</p>
+        <img v-bind:src="url">
+        <h1>'v-bind' Font Size Example</h1>
+        <p>The browser sets the font-size based on the value of 'size' in the Vue instance.</p>
+        <div v-bind:style="{ fontSize: size }">Text example (30px)</div>
+        <h1>Example: 'v-bind' with Conditional Background Color</h1>
+        <p>The browser sets the background color with 'hsl()' based on the value of 'bgVal' in the Vue instance.</p>
+        <div v-bind:style="{ backgroundColor: isImportant ? 'lightgray' : 'lightcoral' }">Importance based on background
+            color</div>
+        <hr>
+        <!-- #################### Exercise 5-->
+        <h1>Example: v-show vs. v-if</h1>
+        <p>Set the 'showDiv' data property to 'false', and run the code again. Right click this green p element, choose
+            'Inspect' or 'Inspect element' and you can see that the div element with v-show still exist, it is only the
+            CSS display property that is set to 'none', and the div with v-if is destroyed.</p>
+        <div v-show="showDiv">Div tag with v-show</div>
+        <div v-if="showDiv">Div tag with v-if</div>
+        <hr>
+        <!-- #################### Exercise 6-->
+        <h1>Example: 'v-for' to create li-tags</h1>
+        <p>In this example 'v-for' creates an 'li' tag with the food name for each food item in the Vue instance array.
+        </p>
+        <ol>
+            <li v-for="x in manyFoods">{{ x }}</li>
+        </ol>
+
+        <h1>Example 'v-for' to create images</h1>
+        <p>The 'v-for' directive is used to create images based on the 'manyFoods' array in the Vue instance.</p>
+        <div id="v-for-img-class">
+            <img v-for="x in manyFoods_IMG" v-bind:src="x">
+        </div>
+
+        <h1>Example 'v-for' to create images and text</h1>
+        <p>The 'v-for' directive is used to create images and text based on the 'manyFoods' array in the Vue instance.
+        </p>
+        <div id="v-for-img-class">
+            <figure v-for="x in manyFoods_ARR">
+                <img v-bind:src="x.url">
+                <figcaption>{{ x.name }}</figcaption>
+            </figure>
+        </div>
+
+        <h1>Example: Get the array element index with 'v-for'</h1>
+        <p>The 'v-for' directive is used to get the index and food name of elements inside the 'manyFoods' array in the
+            Vue instance.</p>
+        <div style="background-color: coral;">
+            <p v-for="(x, index) in manyFoods">
+                {{ index }}: "{{ x }}" <br>
+            </p>
+        </div>
+
+        <h1>Example: Get the array element index with 'v-for'</h1>
+        <p>The 'v-for' directive is used to get the index of objects inside the 'manyFoods' array, together with the
+            name and url of each food object.</p>
+        <div class="row" v-for="(x, index, A) in manyFoods_ARR">
+            <p>
+                {{ index }}: "{{ x.name }}", url: "{{ x.url }}" <br>
+            </p>
+            <img v-bind:src="x.url">
+        </div>
+        <hr>
+        <!-- #################### Exercise 7-->
+        <h1>Example: Light Switch</h1>
+        <p>The v-on directive is used on the button tag to listen to the 'click' event. When the 'click' event occurs
+            the 'lightOn' data property is toggled between 'true' and 'false', making the yellow div behind the
+            lightbulb visible/hidden.</p>
+        <div id="lightDiv">
+            <div v-show="lightOn"></div>
+            <img src="https://www.w3schools.com/vue/img_lightBulb.svg">
+        </div>
+        <button v-on:click=" lightOn =! lightOn ">Switch light</button>
+        <hr>
+        <!-- #################### Exercise 8-->
+        <h1>Example: Count Input Events</h1>
+        <input type="text" v-on:input="inpCount++" placeholder="Start writing..">
+        <p>{{ 'Input events occured: '+inpCount }}</p>
+        <hr>
+        <!-- #################### Exercise 9-->
+        <h1>Example: Count Input Events</h1>
+        <div id="app_mouse_move">
+            <p>Move the mouse pointer over the box below to change the background-color randomly with hsl color code.
+            </p>
+            <div v-on:mousemove=" colorVal = Math.floor(Math.random()*360) "
+                v-bind:style=" {backgroundColor: 'hsl('+colorVal+',60%,60%)'} "></div>
+            <p><span>backgroundColor: hsl(<strong>{{ colorVal }}</strong>, 80%, 80%)</span></p>
+            <p>To understand how to set a color in CSS with 'hsl()' see <a
+                    href="https://www.w3schools.com/css/css_colors_hsl.asp" target="_blank">our page about this</a>.</p>
+        </div>
+        <hr>
+        <!-- #################### Exercise 10-->
+        <div id="app_show_food_img">
+            <h1>Example: Show Food Image</h1>
+            <p>Click on a food name below to see an image of it.</p>
+            <img v-bind:src="imgUrl">
+            <ol>
+                <li v-for="food in manyFoods_ARR" v-on:click="imgUrl = food.url">
+                    {{ food.name }}
+                </li>
+            </ol>
+        </div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: "Hello World!",
+                    likes: 0,
+                    num: 0,
+                    vueClass: "pinkBG",
+                    url: "https://shumai-24.web.app/Image/LOGO.png",
+                    size: '30px',
+                    isImportant: true,
+                    showDiv: true,
+                    manyFoods: [
+                        'Burrito',
+                        'Salad',
+                        'Cake',
+                        'Soup',
+                        'Fish',
+                        'Pizza',
+                        'Rice'
+                    ],
+                    manyFoods_IMG: [
+                        'https://www.w3schools.com/vue/img_burrito.svg',
+                        'https://www.w3schools.com/vue/img_salad.svg',
+                        'https://www.w3schools.com/vue/img_cake.svg',
+                        'https://www.w3schools.com/vue/img_soup.svg',
+                        'https://www.w3schools.com/vue/img_fish.svg',
+                        'https://www.w3schools.com/vue/img_pizza.svg',
+                        'https://www.w3schools.com/vue/img_rice.svg'
+                    ],
+                    manyFoods_ARR: [
+                        { name: 'Burrito', url: 'https://www.w3schools.com/vue/img_burrito.svg' },
+                        { name: 'Salad', url: 'https://www.w3schools.com/vue/img_salad.svg' },
+                        { name: 'Cake', url: 'https://www.w3schools.com/vue/img_cake.svg' },
+                        { name: 'Soup', url: 'https://www.w3schools.com/vue/img_soup.svg' },
+                        { name: 'Fish', url: 'https://www.w3schools.com/vue/img_fish.svg' },
+                        { name: 'Pizza', url: 'https://www.w3schools.com/vue/img_pizza.svg' },
+                        { name: 'Rice', url: 'https://www.w3schools.com/vue/img_rice.svg' }
+                    ],
+                    lightOn: false,
+                    inpCount: 0,
+                    colorVal: 50,
+                    imgUrl: 'https://www.w3schools.com/vue/img_burrito.svg',
+                }
+            },
+            methods: {
+                Increase_Num() {
+                    this.num++;
+                    // alert('Thank! Have some cake')
+                },
+                Random_Num() {
+                    this.likes = Math.ceil(Math.random() * 100)
+                },
+                Set_Pink_BG() {
+                    this.vueClass = "pinkBG"
+                },
+                Set_Red_BG() {
+                    this.vueClass = "redBG"
+                },
+                Set_Blue_BG() {
+                    this.vueClass = "blueBG"
+                }
+            }
+        })
+
+        app.mount('#app')
+
+    </script>
+
+</body>
+
+</html>
