@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinking Game</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        #app {
+            text-align: center;
+        }
+        h1 {
+            color: #f9d423;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(8, 80px);
+            gap: 10px;
+            justify-content: center;
+        }
+        .card {
+            width: 80px;
+            height: 80px;
+            background-color: #008000;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        .card.open {
+            background-color: #f9d423;
+            transform: rotateY(180deg);
+            box-shadow: 0 6px 12px rgba(249, 212, 35, 0.5);
+        }
+        .card.open.drink {
+            background-color: #ff4d4d;
+            box-shadow: 0 6px 12px rgba(255, 77, 77, 0.5);
+        }
+        .card.open span {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+        }
+        .card.open span img {
+            width: 40px;
+            height: 40px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Drinking Game</h1>
+        <div class="grid">
+            <div 
+                v-for="(card, index) in cards" 
+                :key="index" 
+                class="card" 
+                :class="{ open: card.isOpen, drink: card.isDrink && card.isOpen }"
+                @click="openCard(index)"
+            >
+                <span v-if="card.isOpen">
+                    <span v-if="card.isDrink" style="font-size: 2rem;">🍺</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+        console.log('111111', createApp, typeof(createApp))
+
+        createApp({
+            data() {
+                return {
+                    cards: []
+                };
+            },
+            methods: {
+                initializeCards() {
+                    this.cards = Array.from({ length: 32 }, () => ({
+                        isOpen: false,
+                        isDrink: false
+                    }));
+                    this.assignDrinks();
+                },
+                assignDrinks() {
+                    const drinkIndexes = new Set();
+                    console.log('###########', drinkIndexes, typeof(drinkIndexes))
+                    while (drinkIndexes.size < 8) {
+                        drinkIndexes.add(Math.floor(Math.random() * 32));
+                    }
+                    drinkIndexes.forEach(index => {
+                        this.cards[index].isDrink = true;
+                    });
+                },
+                openCard(index) {
+                    if (this.cards[index].isOpen) return;
+                    this.cards[index].isOpen = true;
+                    if (this.cards[index].isDrink) {
+                        setTimeout(() => {
+                            alert('You have to drink!');
+                            this.initializeCards();
+                        }, 500);
+                    }
+                }
+            },
+            mounted() {
+                this.initializeCards();
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
