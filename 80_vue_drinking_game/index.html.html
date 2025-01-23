@@ -18,10 +18,6 @@
             color: #ffffff;
         }
 
-        div {
-            width: 100%;
-        }
-
         #app {
             text-align: center;
         }
@@ -73,20 +69,11 @@
             height: 40px;
             margin-top: 5px;
         }
-        /* # Responsive with max-width iphone 14 pro-max */
-        @media (max-width: 932px) {
-            #app {
-                transform: scale(0.9, 0.9)
-            }
 
-            .card {
-                transform: scale(0.9, 0.9)
-            }
-            .grid {
-                display: grid;
-                grid-template-columns: repeat(4, 80px);
-                gap: 10px;
-                justify-content: center;
+        @media only screen and (max-width: 620px) {
+            /* For mobile phones: */
+            div {
+                width: 100%;
             }
         }
     </style>
