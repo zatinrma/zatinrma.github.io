@@ -2,7 +2,7 @@ body {
 
     background: linear-gradient(135deg, #004e92, #00c6ff); /* Deep Blue to Aqua */
     color: #fff; /* White text for contrast */
-    font-family: Arial, sans-serif;
+    font-family: 'Khmer';
     display: flex;
     justify-content: center;
     align-items: center;
