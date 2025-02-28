@@ -1,0 +1,175 @@
+body {
+
+    background: linear-gradient(135deg, #004e92, #00c6ff); /* Deep Blue to Aqua */
+    color: #fff; /* White text for contrast */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    padding: 10px 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-bottom: 3px;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+}
+
+.welcome-text {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 2px solid #00eaff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00eaff;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.cover {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 3px auto;
+    border: 2px solid #00eaff;
+    box-shadow: 0 0 10px #00eaff;
+    border-radius: 8px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto;
+    gap: 10px;
+}
+
+.column {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h4 {
+    margin-top: -10px;
+    margin-bottom: 3px;
+}
+
+.button-group {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.button-group a i {
+    font-size: 38px;
+    color: #24D1DE;
+}
+
+.neon-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 1.5px;
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    background: #004e92;
+    border: 1.5px solid #00eaff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #00eaff;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+}
+
+.neon-button img {
+    width: 60px;
+    height: auto;
+}
+
+.neon-button:hover {
+    background: #00eaff;
+    color: #121212;
+    box-shadow: 0 0 20px #00eaff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .welcome-text {
+        font-size: 15px;
+        padding: 6px 6px;
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .button-group {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .neon-button {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .neon-button img {
+        width: 40px;
+        height: auto;
+    }
+
+    .button-group a i {
+        font-size: 28px;
+        color: #24D1DE;
+    }
+}
