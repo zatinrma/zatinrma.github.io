@@ -1,7 +1,8 @@
 body {
-
-    background: linear-gradient(135deg, #004e92, #00c6ff); /* Deep Blue to Aqua */
-    color: #fff; /* White text for contrast */
+    background: linear-gradient(135deg, #004e92, #00c6ff);
+    /* Deep Blue to Aqua */
+    color: #fff;
+    /* White text for contrast */
     font-family: 'Khmer';
     display: flex;
     justify-content: center;
@@ -20,27 +21,28 @@ body {
     padding: 10px 0;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    margin-bottom: 3px;
-}
-
 .logo {
     max-width: 120px;
     height: auto;
 }
 
+.logo-a {
+    max-width: 30px;
+    height: auto;
+    color: white;
+}
+
+.nav-letter {
+    color: rgb(250, 248, 248);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-family: 'Khmer';
+}
+
 .welcome-text {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
-    padding: 8px 15px;
-    border: 2px solid #00eaff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #00eaff;
+    padding: 5px 12px;
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -133,8 +135,9 @@ h4 {
     }
 
     .welcome-text {
-        font-size: 15px;
-        padding: 6px 6px;
+        font-size: 12px;
+        padding: 4px 4px;
+        scale: 78%;
     }
 
     .logo {
@@ -172,4 +175,74 @@ h4 {
         font-size: 28px;
         color: #24D1DE;
     }
+
+    .nav-letter {
+        color: rgb(250, 248, 248);
+        letter-spacing: 0, 6px;
+        text-decoration: none;
+        font-family: 'Khmer';
+    }
+}
+
+@media (min-width: 431px) {
+    .header {
+        height: 50px;
+        padding: 0 5px;
+    }
+}
+
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(180deg, #004e92, #1a69af);
+    /* Deep Blue to Aqua */
+    color: #f3fcff;
+    z-index: 399;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding: 0 10px;
+    margin-bottom: 0.3rem;
+    box-shadow: 0 3px 5px rgba(0, 215, 243, 0.9), 0 0 15px rgba(2, 236, 217, 0.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-bottom: 3px;
+}
+
+/* Offset the scroll position to account for the fixed header */
+.section {
+    scroll-margin-top: 60px;
+    /* Adjust this value according to the height of your fixed header */
+}
+
+.promotion-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    /* Keeps the height as auto */
+    padding: 10px;
+    /* Adds some padding for better spacing */
+    background: linear-gradient(180deg, #004e92, #1a69af);
+    /* Deep Blue to Aqua */
+    margin: 10px auto;
+    border: 2px solid #00eaff;
+    box-shadow: 0 0 10px #00eaff;
+    border-radius: 8px;
+    text-align: center;
+    /* Ensures text is centered horizontally */
+    color: linear-gradient(180deg, #f7de00, #fff);
+    font-weight: bold;
+    background: linear-gradient(180deg, #fff, #f7de00);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 1.6px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
