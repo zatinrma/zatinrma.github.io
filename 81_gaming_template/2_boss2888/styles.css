@@ -112,7 +112,7 @@ h4 {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-height: 50px;
+    min-height: 76px;
 }
 
 .neon-button img {
@@ -137,7 +137,7 @@ h4 {
     .welcome-text {
         font-size: 12px;
         padding: 4px 4px;
-        scale: 70%;
+        scale: 76%;
     }
 
     .logo {
@@ -199,7 +199,7 @@ h4 {
     /* Deep Blue to Aqua */
     color: #f3fcff;
     z-index: 399;
-    height: 60px;
+    height: 66px;
     display: flex;
     align-items: center;
     white-space: nowrap;
