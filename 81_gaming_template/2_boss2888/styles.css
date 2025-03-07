@@ -246,3 +246,26 @@ h4 {
     letter-spacing: 1.6px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
+/* # Modal style */
+.cus-modal-style{
+    background: linear-gradient(135deg, #004e92, #00c6ff);
+    /* Deep Blue to Aqua */
+    color: #fff;
+    /* White text for contrast */
+    font-family: 'Khmer';
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+    position: relative;
+    text-wrap-style: auto;
+    text-wrap-mode: wrap;
+}
+.img-modal-style {
+    box-shadow: 0 3px 5px rgba(0, 215, 243, 0.9), 0 0 15px rgba(2, 236, 217, 0.75);
+    margin-bottom: 10px;
+}
+
+#image-description{
+    margin-top: 10px;
+}
