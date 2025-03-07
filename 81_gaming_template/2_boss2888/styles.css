@@ -126,70 +126,6 @@ h4 {
     box-shadow: 0 0 20px #00eaff;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: row;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .welcome-text {
-        font-size: 12px;
-        padding: 4px 4px;
-        scale: 71%;
-    }
-
-    .logo {
-        max-width: 100px;
-    }
-
-    .row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .column {
-        width: 100%;
-        max-width: 800px;
-    }
-
-    .button-group {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-    }
-
-    .neon-button {
-        font-size: 9px;
-        letter-spacing: 0.5px;
-    }
-
-    .neon-button img {
-        width: 40px;
-        height: auto;
-    }
-
-    .button-group a i {
-        font-size: 28px;
-        color: #24D1DE;
-    }
-
-    .nav-letter {
-        color: rgb(250, 248, 248);
-        letter-spacing: 0, 6px;
-        text-decoration: none;
-        font-family: 'Khmer';
-    }
-}
-
-@media (min-width: 431px) {
-    .header {
-        height: 50px;
-        padding: 0 5px;
-    }
-}
 
 .header {
     width: 100%;
@@ -268,4 +204,70 @@ h4 {
 
 #image-description{
     margin-top: 10px;
+}
+
+#small-text-id{
+    font-size: 16px !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .welcome-text {
+        font-size: 12px;
+        padding: 4px 4px;
+        scale: 71%;
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .button-group {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .neon-button {
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .neon-button img {
+        width: 40px;
+        height: auto;
+    }
+
+    .button-group a i {
+        font-size: 28px;
+        color: #24D1DE;
+    }
+
+    .nav-letter {
+        color: rgb(250, 248, 248);
+        letter-spacing: 0, 6px;
+        text-decoration: none;
+        font-family: 'Khmer';
+    }
+
+    #small-text-id {
+        font-size: 10px !important;
+    }
 }
