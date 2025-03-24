@@ -49,8 +49,9 @@ package.json
 /bin/
 /build/
 /dist/
-# /include/
+/include/
 /lib/
 /man/
 /share/
 /src/
+/myworld/
